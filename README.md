@@ -22,6 +22,10 @@ Este projeto foi desenvolvido como parte da preparação para a prova A3 da disc
 
 ## Funcionalidades Interativas
 
+### Leitura de Arquivo
+
+Selecione um arquivo que tenha numeros para ocorrer a ordenação
+
 ### Ordenação
 
 Escolha entre diferentes métodos de ordenação disponíveis:
