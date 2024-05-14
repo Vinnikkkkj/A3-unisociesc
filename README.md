@@ -20,10 +20,25 @@ Este projeto foi desenvolvido como parte da preparação para a prova A3 da disc
 - Java Development Kit (JDK)
 - IDE Java (Eclipse, IntelliJ, NetBeans, etc.)
 
+## Funcionalidades Interativas
+
+### Ordenação
+
+Escolha entre diferentes métodos de ordenação disponíveis:
+
+- [ ] Insertion Sort
+- [ ] Quick Sort
+- [ ] Bubble Sort
+
+### Pesquisa
+
+Escolha entre diferentes métodos de pesquisa disponíveis:
+
+- [ ] Pesquisa Binária
+- [ ] Pesquisa Linear
+
 ## Contribuição
 
 Este projeto está em fase de preparação para a prova A3 e não está aberto a contribuições externas neste momento.
-
----
 
 Este README servirá como guia para os avaliadores da prova A3 da disciplina de Programação de Soluções Computacionais na Unisociesc.
