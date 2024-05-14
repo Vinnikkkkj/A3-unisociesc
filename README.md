@@ -41,4 +41,6 @@ Escolha entre diferentes métodos de pesquisa disponíveis:
 
 Este projeto está em fase de preparação para a prova A3 e não está aberto a contribuições externas neste momento.
 
+---
+
 Este README servirá como guia para os avaliadores da prova A3 da disciplina de Programação de Soluções Computacionais na Unisociesc.
