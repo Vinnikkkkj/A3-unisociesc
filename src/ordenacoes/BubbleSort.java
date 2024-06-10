@@ -1,6 +1,6 @@
 package ordenacoes;
 
-public class BubbleSort {
+public class bubbleSort {
     public static void sort(String[] array) {
         boolean swapped;
         do {

@@ -1,6 +1,6 @@
 package ordenacoes;
 
-public class QuickSort {
+public class quickSort {
     public static void sort(String[] array) {
         quickSort(array, 0, array.length - 1);
     }

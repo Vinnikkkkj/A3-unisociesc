@@ -1,6 +1,6 @@
 package ordenacoes;
 
-public class InsertionSort {
+public class insertionSort {
     public static void sort(String[] array) {
         for (int i = 1; i < array.length; i++) {
             String current = array[i];
