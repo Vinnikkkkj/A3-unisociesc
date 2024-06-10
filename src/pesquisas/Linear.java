@@ -1,6 +1,6 @@
 package ProjetoOrdenaçãoEPesquisa;
 
-public class PesquisaLinear implements MetodoPesquisa {
+public class Linear implements MetodoPesquisa {
     @Override
     public int pesquisar(String[] array, String valor) {
         for (int i = 0; i < array.length; i++) {
