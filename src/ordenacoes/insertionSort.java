@@ -1,4 +1,4 @@
-package ordenacoes
+package ordenacoes;
 
 public class InsertionSort {
     public static void sort(String[] array) {
