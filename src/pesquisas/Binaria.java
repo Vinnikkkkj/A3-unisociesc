@@ -1,4 +1,4 @@
-package ProjetoOrdenaçãoEPesquisa;
+package pesquisas;
 
 public class Binaria implements MetodoPesquisa {
     @Override
