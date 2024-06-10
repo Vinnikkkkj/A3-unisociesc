@@ -1,6 +1,6 @@
 package ProjetoOrdenaçãoEPesquisa;
 
-public class PesquisaBinaria implements MetodoPesquisa {
+public class Binaria implements MetodoPesquisa {
     @Override
     public int pesquisar(String[] array, String valor) {
         int left = 0;
