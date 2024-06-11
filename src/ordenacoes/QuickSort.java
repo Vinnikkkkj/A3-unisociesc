@@ -1,15 +1,18 @@
 package ordenacoes;
 
-public class quickSort {
-    public static void sort(String[] array) {
-        quickSort(array, 0, array.length - 1);
+import ordenacoes.EscolhaMetodo.ProgressCallback;
+
+public class QuickSort {
+    public static void sort(String[] array, ProgressCallback callback) {
+        quickSort(array, 0, array.length - 1, callback);
     }
 
-    private static void quickSort(String[] array, int low, int high) {
+    private static void quickSort(String[] array, int low, int high, ProgressCallback callback) {
         if (low < high) {
             int pivotIndex = partition(array, low, high);
-            quickSort(array, low, pivotIndex - 1);
-            quickSort(array, pivotIndex + 1, high);
+            quickSort(array, low, pivotIndex - 1, callback);
+            quickSort(array, pivotIndex + 1, high, callback);
+            callback.onProgressUpdate(high);
         }
     }
 

@@ -1,4 +1,4 @@
-package ProjetoOrdenaçãoEPesquisa;
+package pesquisas;
 
 public class Linear implements MetodoPesquisa {
     @Override
@@ -8,6 +8,6 @@ public class Linear implements MetodoPesquisa {
                 return i;
             }
         }
-        return -1; // Valor não encontrado
+        return -1;
     }
 }

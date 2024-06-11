@@ -1,15 +1,18 @@
 package ordenacoes;
 
-public class insertionSort {
-    public static void sort(String[] array) {
+import ordenacoes.EscolhaMetodo.ProgressCallback;
+
+public class InsertionSort {
+    public static void sort(String[] array, ProgressCallback callback) {
         for (int i = 1; i < array.length; i++) {
-            String current = array[i];
+            String key = array[i];
             int j = i - 1;
-            while (j >= 0 && array[j].compareTo(current) > 0) {
+            while (j >= 0 && array[j].compareTo(key) > 0) {
                 array[j + 1] = array[j];
-                j--;
+                j = j - 1;
             }
-            array[j + 1] = current;
+            array[j + 1] = key;
+            callback.onProgressUpdate(i);
         }
     }
 }
