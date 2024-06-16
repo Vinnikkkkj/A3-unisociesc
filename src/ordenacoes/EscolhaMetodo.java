@@ -1,6 +1,5 @@
 package ordenacoes;
 
-import java.util.Scanner;
 import pesquisas.*;
 
 public class EscolhaMetodo {

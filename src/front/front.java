@@ -5,6 +5,7 @@ import javax.swing.JComboBox;
 import javax.swing.JFileChooser;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 import javax.swing.SwingWorker;
 import javax.swing.JPanel;
@@ -19,12 +20,14 @@ import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
 import javax.swing.filechooser.FileNameExtensionFilter;
 
 import ordenacoes.EscolhaMetodo;
+import database.DatabaseManager;
 
 public class front {
 
@@ -118,6 +121,10 @@ public class front {
         searchResultLabel.setVisible(false);
         searchPanel.add(searchResultLabel);
 
+        JButton loadButton = new JButton("Carregar no Banco de Dados");
+        loadButton.setVisible(false);
+        sortPanel.add(loadButton);
+
         sortComboBox.addItemListener(new ItemListener() {
             @Override
             public void itemStateChanged(ItemEvent e) {
@@ -198,7 +205,8 @@ public class front {
                                 searchDropdown.setVisible(true);
                                 searchComboBox.setVisible(true);
                                 searchLabel.setVisible(true);
-                                
+                                loadButton.setVisible(true);
+
                                 searchButton.addActionListener(new ActionListener() {
                                     @Override
                                     public void actionPerformed(ActionEvent e) {
@@ -215,7 +223,7 @@ public class front {
                                              }
                                     		 
                         				} catch (Exception err) {
-                        					System.out.println(err);
+                        					JOptionPane.showMessageDialog(frame, "Erro durante a pesquisa: " + err.getMessage(), "Erro", JOptionPane.ERROR_MESSAGE);
                         				}
                                     }    
                                 });
@@ -225,10 +233,26 @@ public class front {
                         worker.execute();
 
                     } catch (IOException err) {
-                        System.out.println("Falha ao ler o arquivo: " + err.getMessage());
+                        JOptionPane.showMessageDialog(frame, "Falha ao ler o arquivo: " + err.getMessage(), "Erro", JOptionPane.ERROR_MESSAGE);
                     }
                 } else {
-                    System.out.println("Nenhum arquivo selecionado.");
+                    JOptionPane.showMessageDialog(frame, "Nenhum arquivo selecionado.", "Aviso", JOptionPane.WARNING_MESSAGE);
+                }
+            }
+        });
+
+        loadButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                String url = "jdbc:mysql://localhost:3306/projeto-a3";
+                String user = "root";
+                String password = "root";
+                DatabaseManager dbManager = new DatabaseManager(url, user, password);
+                try {
+                    dbManager.insertData(sortedDataList);
+                    JOptionPane.showMessageDialog(frame, "Dados carregados com sucesso no banco de dados.", "Sucesso", JOptionPane.INFORMATION_MESSAGE);
+                } catch (SQLException err) {
+                    JOptionPane.showMessageDialog(frame, "Erro ao carregar os dados no banco de dados: " + err.getMessage(), "Erro", JOptionPane.ERROR_MESSAGE);
                 }
             }
         });
